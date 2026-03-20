@@ -1,7 +1,7 @@
 # blends
 
-The objective of blends is to blend colours, palettes or palette
-functions using blend modes, such as multiply and screen.
+The objective of blends is to blend colour palettes using blend modes,
+such as multiply and screen.
 
 ## Installation
 

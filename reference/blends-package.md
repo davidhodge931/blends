@@ -1,7 +1,6 @@
-# blends: Blend Colours and Palettes
+# blends: Blend Colour Palettes
 
-Blend colours and palettes using blend modes such as multiply and
-screen.
+Blend colour palettes using blend modes such as multiply and screen.
 
 ## See also
 
