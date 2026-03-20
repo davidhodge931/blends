@@ -1,10 +1,10 @@
 Package: blends
-Title: Blend Colours and Palettes
+Title: Blend Colour Palettes
 Version: 0.1.0
 Authors@R: 
     person("David", "Hodge", , "davidhodge931@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-3868-7501"))
-Description: Blend colours and palettes using blend modes such as multiply and screen.
+Description: Blend colour palettes using blend modes such as multiply and screen.
 License: MIT + file LICENSE
 URL: https://github.com/davidhodge931/blends, https://davidhodge931.github.io/blends/
 BugReports: https://github.com/davidhodge931/blends/issues

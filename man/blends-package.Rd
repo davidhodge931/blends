@@ -4,11 +4,11 @@
 \name{blends-package}
 \alias{blends}
 \alias{blends-package}
-\title{blends: Blend Colours and Palettes}
+\title{blends: Blend Colour Palettes}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Blend colours and palettes using blend modes such as multiply and screen.
+Blend colour palettes using blend modes such as multiply and screen.
 }
 \seealso{
 Useful links:
