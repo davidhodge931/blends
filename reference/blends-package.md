@@ -1,6 +1,8 @@
 # blends: Blend Colour Palettes
 
-Blend colour palettes using blend modes such as multiply and screen.
+Blends colour palettes using digital blend modes such as multiply,
+screen, and overlay. These methods composite colours and palette
+functions using Porter-Duff alpha compositing for data visualisation.
 
 ## See also
 
