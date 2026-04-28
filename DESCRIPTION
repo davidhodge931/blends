@@ -6,10 +6,9 @@ Authors@R:
            email = "davidhodge931@gmail.com", 
            role = c("aut", "cre", "cph"), 
            comment = c(ORCID = "0000-0002-3868-7501"))
-Description: Blends colour palettes using digital blend modes such
-    as multiply, screen, and overlay. These methods composite colours and
-    palette functions using Porter-Duff alpha compositing for data
-    visualisation.
+Description: Blend colour functions for publication-quality visualisation. These 
+    functions make it straightforward to blend colours and palettes using  
+    digital blend modes such as multiply, screen, and overlay.
 License: MIT + file LICENSE
 URL: https://github.com/davidhodge931/blends, 
     https://davidhodge931.github.io/blends/
@@ -23,6 +22,7 @@ Suggests:
     dplyr,
     ggplot2,
     jumble,
+    spelling,
     testthat (>= 3.0.0),
     tidyr
 Encoding: UTF-8

@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Blends colour palettes using digital blend modes such as multiply, screen, and overlay. These methods composite colours and palette functions using Porter-Duff alpha compositing for data visualisation.
+Blend colour functions for publication-quality visualisation. These functions make it straightforward to blend colours and palettes using digital blend modes such as multiply, screen, and overlay.
 }
 \seealso{
 Useful links:
