@@ -25,9 +25,10 @@ pak::pak("davidhodge931/blends")
 ## Example
 
 ``` r
-library(blends)
+library(dplyr)
 library(jumble)
-scales::show_col(c(teal, orange, multiply(teal, orange)), ncol = 3)
+
+scales::show_col(c(teal, orange, blends::multiply(teal, orange)), ncol = 3)
 ```
 
 <img src="man/figures/README-setup-1.png" alt="" width="100%" />
