@@ -1,8 +1,8 @@
-# blends: Blend Colour Palettes
+# blends: Blend Colours and Palettes
 
-Blend colour functions for publication-quality visualisation. These
-functions make it straightforward to blend colours and palettes using
-digital blend modes such as multiply, screen, and overlay.
+Colour blend functions. These functions make it easier to blend colours
+and palettes using digital blend modes such as multiply, screen, and
+overlay.
 
 ## See also
 
