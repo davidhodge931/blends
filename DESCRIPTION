@@ -1,6 +1,6 @@
 Package: blends
 Title: Blend Colours and Palettes
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: 
     person(given = "David", family = "Hodge", 
            email = "davidhodge931@gmail.com", 
