@@ -4,11 +4,11 @@
 \name{blends-package}
 \alias{blends}
 \alias{blends-package}
-\title{blends: Blend Colour Palettes}
+\title{blends: Blend Colours and Palettes}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Blend colour functions for publication-quality visualisation. These functions make it straightforward to blend colours and palettes using digital blend modes such as multiply, screen, and overlay.
+Colour blend functions. These functions make it easier to blend colours and palettes using digital blend modes such as multiply, screen, and overlay.
 }
 \seealso{
 Useful links:
