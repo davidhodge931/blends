@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/davidhodge931/blends/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/davidhodge931/blends/blob/0.1.1/DESCRIPTION)
 
 Hodge D (2026). *blends: Blend Colours and Palettes*. R package version
 0.1.1, <https://github.com/davidhodge931/blends>.
