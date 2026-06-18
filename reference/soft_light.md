@@ -1,7 +1,7 @@
 # Blend colours and palettes using soft light mode
 
-A softer version of hard light. Darkens or lightens depending on the
-first colour, but with a gentler effect than hard light.
+Gently darkens or lightens depending on the first colour, producing a
+softer effect than hard light.
 
 ## Usage
 
@@ -18,7 +18,11 @@ soft_light(...)
   - If one argument: the colour or palette is blended with itself
 
   - If two arguments: the first is blended with the second Each argument
-    can be a character vector of colours or a `scales::pal_*()` function
+    can be a character vector of colours or a `scales::pal_*()`
+    function.
+
+  Recycling for direct colour vectors follows `vctrs` semantics: inputs
+  must either have the same size, or one input must have size 1.
 
 ## Value
 
