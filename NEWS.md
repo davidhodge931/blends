@@ -1,3 +1,7 @@
+# blends (development)
+
+* Refactored code.
+
 # blends (0.1.1)
 
 * Updated Readme.

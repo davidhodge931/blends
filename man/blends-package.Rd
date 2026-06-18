@@ -6,7 +6,7 @@
 \alias{blends-package}
 \title{blends: Blend Colours and Palettes}
 \description{
-\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+\if{html}{\figure{logo.svg}{options: style='float: right' alt='logo' width='120'}}
 
 Colour blend functions. These functions make it easier to blend colours and palettes using digital blend modes such as multiply, screen, and overlay.
 }
@@ -21,6 +21,11 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: David Hodge \email{davidhodge931@gmail.com} (\href{https://orcid.org/0000-0002-3868-7501}{ORCID}) [copyright holder]
+
+Authors:
+\itemize{
+  \item David Hodge \email{davidhodge931@gmail.com} (\href{https://orcid.org/0000-0002-3868-7501}{ORCID}) [copyright holder]
+}
 
 }
 \keyword{internal}
