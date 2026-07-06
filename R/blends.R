@@ -67,11 +67,12 @@
     f <- blend_fn(c1, c2)
 
     result <- numeric(len)
-    result[idx] <- (
-      c1[idx] * alpha1[idx] * (1 - alpha2[idx]) +
-        c2[idx] * alpha2[idx] * (1 - alpha1[idx]) +
-        f[idx]  * alpha1[idx] * alpha2[idx]
-    ) / alpha_r[idx]
+    result[idx] <- (c1[idx] *
+      alpha1[idx] *
+      (1 - alpha2[idx]) +
+      c2[idx] * alpha2[idx] * (1 - alpha1[idx]) +
+      f[idx] * alpha1[idx] * alpha2[idx]) /
+      alpha_r[idx]
 
     rgb_r[i, ] <- pmax(0, pmin(1, result))
   }
@@ -129,11 +130,13 @@
         return(scales::pal_gradient_n(cols)(x01))
       }
 
-      if (length(x) == 1L &&
+      if (
+        length(x) == 1L &&
           is.numeric(x) &&
           !is.na(x) &&
           x >= 1 &&
-          x == as.integer(x)) {
+          x == as.integer(x)
+      ) {
         return(pal(seq(0, 1, length.out = as.integer(x))))
       }
 
