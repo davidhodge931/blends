@@ -1,8 +1,8 @@
-# blends (0.1.2)
+# blends 0.1.2
 
 * Refactored code.
 
-# blends (0.1.1)
+# blends 0.1.1
 
 * Updated Readme.
 
