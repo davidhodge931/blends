@@ -68,10 +68,10 @@
 
     result <- numeric(len)
     result[idx] <- (c1[idx] *
-      alpha1[idx] *
-      (1 - alpha2[idx]) +
-      c2[idx] * alpha2[idx] * (1 - alpha1[idx]) +
-      f[idx] * alpha1[idx] * alpha2[idx]) /
+                      alpha1[idx] *
+                      (1 - alpha2[idx]) +
+                      c2[idx] * alpha2[idx] * (1 - alpha1[idx]) +
+                      f[idx] * alpha1[idx] * alpha2[idx]) /
       alpha_r[idx]
 
     rgb_r[i, ] <- pmax(0, pmin(1, result))
@@ -132,10 +132,10 @@
 
       if (
         length(x) == 1L &&
-          is.numeric(x) &&
-          !is.na(x) &&
-          x >= 1 &&
-          x == as.integer(x)
+        is.numeric(x) &&
+        !is.na(x) &&
+        x >= 1 &&
+        x == as.integer(x)
       ) {
         return(pal(seq(0, 1, length.out = as.integer(x))))
       }
@@ -376,3 +376,89 @@ difference <- .new_blend(function(c1, c2) abs(c1 - c2))
 #' @examples
 #' exclusion("#FFA600FF", "#8991A1FF")
 exclusion <- .new_blend(function(c1, c2) c1 + c2 - 2 * c1 * c2)
+
+# .is_col_dark -------------------------------------------------------------
+#' Check if a colour is dark
+#'
+#' @description
+#' Determines whether a colour is dark by examining its luminance value.
+#'
+#' @param col A colour value. Can be a hex code, colour name, or any format
+#'   accepted by farver. If NULL, returns FALSE.
+#'
+#' @return TRUE if dark (luminance <= 50) and FALSE otherwise.
+#'
+#' @noRd
+.is_col_dark <- function(col) {
+  if (rlang::is_null(col) || length(col) == 0) {
+    return(FALSE)
+  }
+  col_luminance <- farver::get_channel(
+    colour = col,
+    channel = "l",
+    space = "hcl"
+  )
+  col_luminance <= 50
+}
+
+# .get_theme_background -------------------------------------------------------------
+# Get the fill colour of the current ggplot2 theme's panel background.
+# Falls back to "white" if ggplot2 isn't installed, no panel background is
+# set, or the theme can't be read for any reason.
+.get_theme_background <- function() {
+  if (!rlang::is_installed("ggplot2")) {
+    return("white")
+  }
+
+  panel_background <- tryCatch(
+    ggplot2::get_theme()$panel.background,
+    error = function(e) NULL
+  )
+
+  (if (!is.null(panel_background)) panel_background@fill else NULL) %||% "white"
+}
+
+# blend -------------------------------------------------------------
+#' Blend colours and palettes, with an automatic default mode
+#'
+#' @description
+#' By default, chooses between `screen()` and `multiply()` based on the
+#' current ggplot2 theme's panel background: `screen()` is used when the
+#' panel background is dark, and `multiply()` is used otherwise (including
+#' when ggplot2 isn't installed, no panel background is set, or the theme
+#' can't be determined).
+#'
+#' Any other blend mode can be used instead by supplying `blend` — this
+#' accepts `multiply`, `screen`, `overlay`, `hard_light`, `soft_light`,
+#' `colour_burn`, `colour_dodge`, `darken`, `lighten`, `difference`,
+#' `exclusion`, or any custom blend function built with
+#' `blends:::.new_blend()`. `blend()` is the recommended everyday entry
+#' point into the package: reach for it (or `multiply()` directly) unless
+#' you specifically need a different blend mode.
+#'
+#' The `blend` argument here matches the `blend` argument used throughout
+#' the `scale_blend_*()` family (e.g. `scale_blend_discrete(blend = ...)`),
+#' so the same value can be passed to either.
+#'
+#' @inheritParams multiply
+#' @param blend A blend function such as `multiply`, `screen`, `overlay`, or
+#'   any custom blend function sharing the same `...` colour/palette
+#'   interface. If `NULL` (the default), the mode is chosen automatically
+#'   based on panel background darkness.
+#' @return Character vector of blended colours or a blending function.
+#' @export
+#'
+#' @examples
+#' blend("#F0F0F0", "#808080")
+#' blend("#FF6B6B")
+#' blend("#FFA600FF", "#8991A1FF", blend = overlay)
+blend <- function(..., blend = NULL) {
+  blend_fn <- blend %||% (if (.is_col_dark(.get_theme_background())) screen else multiply)
+  blend_fn(...)
+}
+
+# .blend_default -------------------------------------------------------------
+# Internal alias for `blend()`, used by other files in this package (e.g.
+# scale_blend.R) so a local variable also named `blend` never shadows access
+# to this function.
+.blend_default <- blend

@@ -16,6 +16,7 @@ BugReports: https://github.com/davidhodge931/blends/issues
 Depends: 
     R (>= 4.1.0)
 Imports: 
+    farver,
     rlang,
     scales,
     vctrs

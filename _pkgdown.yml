@@ -2,3 +2,16 @@ url: https://davidhodge931.github.io/blends/
 template:
   bootstrap: 5
   light-switch: yes
+reference:
+- title: Blend
+- contents:
+  - blend
+  - import: true
+- title: Discrete scales
+- contents:
+  - scale_blend_discrete
+  - contains("discrete")
+- title: Continuous scales
+- contents:
+  - scale_blend_continuous
+  - contains("continuous")
