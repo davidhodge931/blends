@@ -1,7 +1,5 @@
 # blends (development)
 
-* Added `blend` function with smart default.
-
 # blends 0.1.2
 
 * Refactored code.
